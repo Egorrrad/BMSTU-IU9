@@ -1,0 +1,44 @@
+% Источники: exam/materials/преподаватель/2020/23-03-2020-MODEL L5(1).doc; exam/materials/моделирование.pdf, раздел 11; exam/materials/прошлогодние ответы/Modelirovanie_1_-3.pdf, вопрос 16; https://github.com/HumsterProgrammer/iu9-notes/blob/main/8sem/Моделирование/Моделирование_лекция-09_17-03-26.md.
+\section{Стохастическое моделирование. Доверительное оценивание параметров модели.}
+
+\textbf{Доверительный интервал} для параметра $\theta$ — интервал $[\hat{\theta}_\text{н},\, \hat{\theta}_\text{в}]$, построенный по выборке, такой что
+\[
+  P\bigl(\hat{\theta}_\text{н} \leqslant \theta \leqslant \hat{\theta}_\text{в}\bigr) = \gamma,
+\]
+где $\gamma$ — \textbf{доверительная вероятность} (уровень доверия), $1-\gamma$ — уровень значимости.
+
+\subsection*{Построение доверительного интервала}
+
+Метод опирается на \textbf{центральную статистику} $T = T(x_1,\ldots,x_n;\,\theta)$ — функцию выборки и параметра, распределение которой не зависит от $\theta$.
+
+Для $T$ находят квантили $t_{\varepsilon_1}$ и $t_{1-\varepsilon_2}$ такие, что
+\[
+  P\bigl(t_{\varepsilon_1} \leqslant T \leqslant t_{1-\varepsilon_2}\bigr) = \gamma,
+\]
+где $\varepsilon_1 + \varepsilon_2 = 1 - \gamma$.
+
+При \textbf{симметричном} интервале:
+\[
+  \varepsilon_1 = \varepsilon_2 = \frac{1-\gamma}{2}.
+\]
+
+Из неравенства $t_{\varepsilon_1} \leqslant T \leqslant t_{1-\varepsilon_2}$ выражают $\theta$ и получают $[\hat{\theta}_\text{н},\, \hat{\theta}_\text{в}]$.
+
+\subsection*{Доверительный интервал для среднего (нормальное распределение)}
+
+Если $\sigma^2$ известна:
+\[
+  \bar{x} - z_{1-\varepsilon}\,\frac{\sigma}{\sqrt{n}} \leqslant \mu \leqslant \bar{x} + z_{1-\varepsilon}\,\frac{\sigma}{\sqrt{n}},
+\]
+где $z_{1-\varepsilon}$ — квантиль стандартного нормального распределения.
+
+Если $\sigma^2$ неизвестна (заменяется $s$): используют распределение Стьюдента $t_{n-1}$:
+\[
+  \bar{x} \pm t_{1-\varepsilon,n-1}\,\frac{s}{\sqrt{n}}.
+\]
+
+\subsection*{Влияние объёма выборки}
+
+Ширина интервала $\hat{\theta}_\text{в} - \hat{\theta}_\text{н} \propto 1/\sqrt{n}$: для уменьшения ширины вдвое необходимо увеличить число испытаний вчетверо.
+
+\clearpage

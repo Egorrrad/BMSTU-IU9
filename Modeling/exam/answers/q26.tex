@@ -1,0 +1,46 @@
+% Источники: exam/materials/моделирование.pdf, раздел 30; exam/materials/преподаватель/2020/23-03-2020-MODEL L6(2).doc.
+\section{Анализ функциональных зависимостей между наблюдаемыми одновременно характеристиками объекта. Метод наименьших квадратов.}
+
+\subsection*{Постановка}
+
+Требуется подобрать параметры $\boldsymbol{\beta}$ функции $f(X,\boldsymbol{\beta})$ так, чтобы она наилучшим образом описывала наблюдения $(X_t, Y_t)$, $t=1,\ldots,n$.
+
+\subsection*{Критерий МНК}
+
+Минимизируется сумма квадратов отклонений:
+\[
+  F(\boldsymbol{\beta}) = \sum_{t=1}^{n} \bigl(Y_t - f(X_t,\boldsymbol{\beta})\bigr)^2 \to \min_{\boldsymbol{\beta}}.
+\]
+
+\subsection*{Линейный МНК (простая регрессия)}
+
+Модель $Y_t = \beta_0 + \beta_1 X_t + \varepsilon_t$. Нормальные уравнения:
+\[
+  \begin{pmatrix} n & \sum x_t \\ \sum x_t & \sum x_t^2 \end{pmatrix}
+  \begin{pmatrix} \hat{\beta}_0 \\ \hat{\beta}_1 \end{pmatrix}
+  = \begin{pmatrix} \sum y_t \\ \sum x_t y_t \end{pmatrix}.
+\]
+Решение:
+\[
+  \hat{b} = \frac{\sum(x_t-\bar{x})(y_t-\bar{y})}{\sum(x_t-\bar{x})^2}, \qquad \hat{a} = \bar{y} - \hat{b}\bar{x}.
+\]
+
+\subsection*{Множественная линейная регрессия}
+
+Модель: $\mathbf{Y} = X\boldsymbol{\beta} + \boldsymbol{\varepsilon}$, где $X$ — матрица плана ($n \times p$).
+
+МНК-оценка:
+\[
+  \hat{\boldsymbol{\beta}} = (X^\top X)^{-1} X^\top \mathbf{Y}.
+\]
+\textbf{Теорема Гаусса–Маркова:} при $M[\boldsymbol{\varepsilon}]=\mathbf{0}$ и $\mathrm{Cov}(\boldsymbol{\varepsilon})=\sigma^2 I$ МНК-оценка $\hat{\boldsymbol{\beta}}$ является лучшей линейной несмещённой оценкой (BLUE).
+
+\subsection*{Оценка качества подгонки}
+
+Коэффициент детерминации:
+\[
+  R^2 = 1 - \frac{\sum(y_t - \hat{y}_t)^2}{\sum(y_t - \bar{y})^2} \in [0,1].
+\]
+$R^2 = 1$ — идеальная подгонка; $R^2 = 0$ — модель не лучше среднего.
+
+\clearpage

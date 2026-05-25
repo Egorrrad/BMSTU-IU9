@@ -1,0 +1,41 @@
+% Поля
+\usepackage{geometry}
+\geometry{a4paper, tmargin=2cm, bmargin=2cm, lmargin=2.5cm, rmargin=1.5cm}
+
+% Кодировка и язык
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, main=russian]{babel}
+
+% Математика
+\usepackage{amsmath, amssymb, amsthm, mathtools}
+
+% Графика и схемы
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
+% Таблицы
+\usepackage{booktabs}
+\usepackage{array}
+
+% Списки
+\usepackage{enumitem}
+\setlist{noitemsep, topsep=2pt}
+
+% Абзацы (конспектный стиль)
+\setlength{\parskip}{0.4em}
+\setlength{\parindent}{0pt}
+
+% Гиперссылки
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=blue]{hyperref}
+
+% Плавающие объекты
+\usepackage{float}
+\usepackage{caption}
+\DeclareCaptionLabelSeparator*{emdash}{~--- }
+\captionsetup{labelsep=emdash, font=small}
+
+% Полуторный интервал
+\linespread{1.2}
